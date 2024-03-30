@@ -23,11 +23,11 @@ const GeneralList = ({ selectedGenre, onSelectGenre }: Props) => {
   return (
     <List>
       {data.map((item) => (
-        <ListItem key={item.id} paddingY="4px">
+        <ListItem key={item.id} paddingY="6px">
           <HStack>
             <Image
               boxSize="32px"
-              borderRadius={8}
+              borderRadius={4}
               src={getCroppedImageUrl(item.image_background)}
             />
             <Button
