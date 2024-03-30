@@ -16,20 +16,20 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
     { value: "-rating", label: "Average rating" },
   ];
 
-  const currentSortOrder = sortOrders.find((item) => item.value);
+  const currentSortOrder = sortOrders.find((item) => item.value === sortOrder);
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         Order by : {currentSortOrder?.label || "Relevance"}
       </MenuButton>
       <MenuList>
-        {sortOrders.map((order) => (
+        {sortOrders.map((item) => (
           <MenuItem
-            onClick={() => onSelectSortOrder(order.value)}
-            key={order.value}
-            value={order.value}
+            onClick={() => onSelectSortOrder(item.value)}
+            key={item.value}
+            value={item.value}
           >
-            {order.label}
+            {item.label}
           </MenuItem>
         ))}
       </MenuList>
